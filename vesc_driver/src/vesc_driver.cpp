@@ -308,7 +308,7 @@ void VescDriver::brakeCallback(const Float64::SharedPtr brake)
 void VescDriver::speedCallback(const Float64::SharedPtr speed)
 {
   if (driver_mode_ = MODE_OPERATING) {
-    vesc_.setSpeed(speed_limit_.clip(speed->data));
+    vesc_.setSpeed(-1 * speed_limit_.clip(speed->data));
   }
 }
 
